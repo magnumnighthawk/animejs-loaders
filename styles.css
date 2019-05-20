@@ -1,0 +1,88 @@
+body,
+html {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.phone {
+  margin: 0 auto;
+  max-width: 378px;
+  height: 300px;
+  position: relative;
+  width: 100%;
+}
+
+.body {
+  margin-left: -68px;
+}
+
+@media all and (max-width: 480px) {
+  .body {
+    margin-left: calc(50% - 257px);
+  }
+}
+
+.dot {
+  transform-origin: center;
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  background-color: #ff5555;
+  border-radius: 50%;
+  margin: 3px;
+}
+
+.wrap.white .dot {
+  background-color: #fff;
+}
+
+.select-wrapper {
+  position: absolute;
+  top: 200px;
+  left: 100px;
+}
+
+#anim-select {
+  font-family: inherit;
+  border-radius: 5px;
+  border: 2px solid #fa5555;
+  padding: 10px 20px;
+  background: #fffafa;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+  text-align-last: center;
+}
+
+#anim-select:hover {
+  background: #ff5555;
+  color: white;
+}
+
+#anim-select option {
+  background: #fffafa;
+  color: #ff5555;
+}
+
+.wrap, .wrap-2 {
+  position: absolute;
+  top: 100px;
+  left: 155px;
+}
+
+.wrap-2 {
+  display: none;
+  text-align: center;
+}
+
+.wrap-2.block {
+  display: block;
+}
+
+.wrap-2 .dot {
+  position: absolute;
+  background-color: #fff;
+}
+
+.displace-top {
+  transform: translateY(-15px);
+}
