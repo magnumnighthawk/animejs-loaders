@@ -63,7 +63,8 @@ html {
   color: #ff5555;
 }
 
-.wrap, .wrap-2 {
+.wrap,
+.wrap-2 {
   position: absolute;
   top: 100px;
   left: 155px;
@@ -85,4 +86,24 @@ html {
 
 .displace-top {
   transform: translateY(-15px);
+}
+
+.morph-btn {
+  /* display: none; */
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.morph-btn-label {
+  position: absolute;
+  top: 97px;
+  left: 156px;
+  z-index: 100;
+  color: white;
+  font-weight: 600;
+}
+
+.hide {
+  display: none;
 }

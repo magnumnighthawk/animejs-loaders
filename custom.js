@@ -101,33 +101,86 @@ const circularLoader = () => {
   }, 660);
 };
 
-const selectItem = document.getElementById("anim-select");
+const morph = () => {
+  anime({
+    targets: "#morph-btn-rect",
+    x: {
+      value: 0,
+      duration: 400,
+      easing: "linear"
+    },
+    y: {
+      value: 0,
+      duration: 400,
+      easing: "linear"
+    },
+    height: "100%",
+    width: "100%",
+    duration: 800,
+    easing: "easeInQuad"
+  });
+  setTimeout(() => {
+    anime({
+      targets: "#morph-btn-rect",
+      rx: 0,
+      duration: 100,
+      easing: "easeInQuad"
+    });
+  }, 400);
+};
 
-selectItem.addEventListener("change", evt => {
-  switch (evt.target.value) {
-    case "up-down":
-      simpleTranslateY();
-      break;
+// const btnRef = document.getElementById("morph-btn-rect");
+// btnRef.addEventListener("click", morph);
+class Component extends React.Component {
+  componentDidMount() {
+    simpleTranslateY();
+    const selectItem = document.getElementById("anim-select");
 
-    case "atomic":
-      atomic();
-      break;
+    selectItem.addEventListener("change", evt => {
+      switch (evt.target.value) {
+        case "up-down":
+          simpleTranslateY();
+          break;
 
-    case "none":
-      reset();
-      break;
+        case "atomic":
+          atomic();
+          break;
 
-    case "path":
-      pathFollower();
-      break;
+        case "none":
+          reset();
+          break;
 
-    case "rotate":
-      circularLoader();
-      break;
+        case "path":
+          pathFollower();
+          break;
 
-    default:
-      break;
+        case "rotate":
+          circularLoader();
+          break;
+
+        default:
+          break;
+      }
+    });
   }
-});
 
-simpleTranslateY();
+  render() {
+    return (
+      <React.Fragment>
+        <div className="wrap">
+          <div className="dot dot-item" />
+          <div className="dot" />
+          <div className="dot" />
+        </div>
+        <div className="wrap-2">
+          <div className="dot one dot-item" />
+          <div className="dot two" />
+          <div className="dot three" />
+        </div>
+      </React.Fragment>
+    );
+  }
+}
+
+const domContainer = document.querySelector("#react-replace");
+ReactDOM.render(<Component />, domContainer);

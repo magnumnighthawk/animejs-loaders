@@ -42,7 +42,12 @@
           />
         </g>
       </svg>
-      <svg id="invisible-circle" width="50" height="50" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        id="invisible-circle"
+        width="50"
+        height="50"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
         <g>
           <title>Layer 1</title>
@@ -58,7 +63,8 @@
           />
         </g>
       </svg>
-      <div class="wrap">
+      <div id="react-replace"></div>
+      <!-- <div class="wrap">
         <div class="dot dot-item"></div>
         <div class="dot"></div>
         <div class="dot"></div>
@@ -67,7 +73,7 @@
         <div class="dot one dot-item"></div>
         <div class="dot two"></div>
         <div class="dot three"></div>
-      </div>
+      </div> -->
       <div class="select-wrapper">
         <select name="animation-type" id="anim-select">
           <option value="up-down">Jumpy</option>
@@ -80,6 +86,15 @@
     </div>
   </body>
   <script src="anime.min.js"></script>
-  <!-- <script src="script.js"></script> -->
-  <script src="custom.js"></script>
+  <script
+    src="https://unpkg.com/react@16/umd/react.development.js"
+    crossorigin
+  ></script>
+  <script
+    src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    crossorigin
+  >
+  </script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <script type="text/babel" src="custom.js"></script>
 </html>
